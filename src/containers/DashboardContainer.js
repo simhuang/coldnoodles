@@ -12,7 +12,28 @@ import {
   closeJoinGameModal
 } from "../actions/modalAction";
 
+import { getAllOpenGames } from "../actions/createGame";
+import { newGameCreatedListener } from "../actions/firebaseListener";
+
 class DashBoardContainer extends React.Component {
+  state = {
+    unsubscribe: null
+  };
+
+  /**
+   * Get all the initial games
+   * instantiate listener to listener for new games
+   */
+  componentDidMount() {
+    this.props.dispatch(getAllOpenGames());
+    const unsubscribe = this.props.dispatch(newGameCreatedListener());
+    this.setState({ unsubscribe });
+  }
+
+  componentWillUnmount() {
+    this.state.unsubscribe();
+  }
+
   createGame = () => {
     this.props.dispatch(openCreateGameModal());
   };
@@ -28,4 +49,8 @@ class DashBoardContainer extends React.Component {
   }
 }
 
-export default connect()(DashBoardContainer);
+const mapStateToProps = state => {
+  return {};
+};
+
+export default connect(mapStateToProps)(DashBoardContainer);

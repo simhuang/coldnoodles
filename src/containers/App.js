@@ -4,6 +4,7 @@ import { createStore, applyMiddleware, compose } from "redux";
 import * as firebase from "firebase";
 import thunk from "redux-thunk";
 import { ThemeProvider } from "@material-ui/core/styles";
+import Typography from "@material-ui/core/Typography";
 
 import firebaseConfig from "../../firebase.json";
 import CodeNamesTheme from "../themes/codenameTheme";
@@ -20,6 +21,10 @@ const store = createStore(
 );
 
 class App extends React.Component {
+  state = {
+    ready: false
+  };
+
   componentDidMount() {
     /**
      * This code initialize the firebase server. Make
@@ -29,12 +34,17 @@ class App extends React.Component {
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
     console.log("server: firebase initialized...");
+    this.setState({ ready: true });
   }
   render() {
     return (
       <Provider store={store}>
         <ThemeProvider theme={CodeNamesTheme}>
-          <MainContainer />
+          {this.state.ready ? (
+            <MainContainer />
+          ) : (
+            <Typography variant="h1">Loading...</Typography>
+          )}
         </ThemeProvider>
       </Provider>
     );

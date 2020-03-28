@@ -128,26 +128,26 @@ export const words = [
   "Dog",
   "Cross",
   "Wave",
-  "Duck"
-  // Wind
-  // Spot
-  // Skyscraper
-  // Paper
-  // Apple
-  // Oil
-  // Cook
-  // Fly
-  // Cast
-  // Bear
-  // Pin
-  // Thief
-  // Trunk
-  // America
-  // Novel
-  // Cell
-  // Bow
-  // Model
-  // Knife
+  "Duck",
+  "Wind",
+  "Spot",
+  "Skyscraper",
+  "Paper",
+  "Apple",
+  "Oil",
+  "Cook",
+  "Fly",
+  "Cast",
+  "Bear",
+  "Pin",
+  "Thief",
+  "Trunk",
+  "America",
+  "Novel",
+  "Cell",
+  "Bow",
+  "Model",
+  "Knife"
   // Knight
   // Court
   // Iron

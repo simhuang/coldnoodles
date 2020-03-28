@@ -19,9 +19,9 @@ class DashboardModalManager extends React.Component {
     this.props.dispatch(closeJoinGameModal());
   };
 
-  createGame = () => {
+  createGame = gameName => {
     console.log("created a game");
-    this.props.dispatch(createNewGame());
+    this.props.dispatch(createNewGame(gameName));
   };
 
   joinGame = () => {
