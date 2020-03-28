@@ -2,6 +2,7 @@ import React from "react";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware, compose } from "redux";
 import * as firebase from "firebase";
+import thunk from "redux-thunk";
 import { ThemeProvider } from "@material-ui/core/styles";
 
 import firebaseConfig from "../../firebase.json";
@@ -15,7 +16,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
   reducers,
   undefined,
-  composeEnhancers(applyMiddleware())
+  composeEnhancers(applyMiddleware(thunk))
 );
 
 class App extends React.Component {
