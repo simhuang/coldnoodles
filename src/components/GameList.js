@@ -4,7 +4,11 @@ import { Typography } from "@material-ui/core";
 class GameList extends React.Component {
   render() {
     return (
-      <div>
+      <div
+        style={{
+          textAlign: "center"
+        }}
+      >
         <Typography variant="h1">Current Games</Typography>
       </div>
     );

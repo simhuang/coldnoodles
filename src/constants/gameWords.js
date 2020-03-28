@@ -97,38 +97,38 @@ export const words = [
   "Chocolate",
   "Trip",
   "Racket",
-  "Bat"
-  // Jet
-  // Shakespeare
-  // Bolt
-  // Switch
-  // Wall
-  // Soul
-  // Ghost
-  // Time
-  // Dance
-  // Amazon
-  // Grace
-  // Moscow
-  // Pumpkin
-  // Antactica
-  // Whip
-  // Heart
-  // Table
-  // Ball
-  // Fighter
-  // Cold
-  // Day
-  // Spring
-  // Match
-  // Diamond
-  // Centaur
-  // March
-  // Roulette
-  // Dog
-  // Cross
-  // Wave
-  // Duck
+  "Bat",
+  "Jet",
+  "Shakespeare",
+  "Bolt",
+  "Switch",
+  "Wall",
+  "Soul",
+  "Ghost",
+  "Time",
+  "Dance",
+  "Amazon",
+  "Grace",
+  "Moscow",
+  "Pumpkin",
+  "Antarctica",
+  "Whip",
+  "Heart",
+  "Table",
+  "Ball",
+  "Fighter",
+  "Cold",
+  "Day",
+  "Spring",
+  "Match",
+  "Diamond",
+  "Centaur",
+  "March",
+  "Roulette",
+  "Dog",
+  "Cross",
+  "Wave",
+  "Duck"
   // Wind
   // Spot
   // Skyscraper
