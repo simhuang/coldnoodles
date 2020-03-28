@@ -5,7 +5,7 @@ class GameList extends React.Component {
   render() {
     return (
       <div>
-        <Typography>Current Games</Typography>
+        <Typography variant="h1">Current Games</Typography>
       </div>
     );
   }

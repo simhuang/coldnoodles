@@ -4,11 +4,8 @@ import Box from "@material-ui/core/Box";
 import PrimaryButton from "../ui_components/PrimaryButton";
 
 class CreateGame extends React.Component {
-  createNewGame = () => {
-    console.log("hello world");
-  };
-
   render() {
+    const { handleCreateGame } = this.props;
     return (
       <div
         style={{
@@ -18,7 +15,7 @@ class CreateGame extends React.Component {
         <Box mt={10} mb={10}>
           <PrimaryButton
             label="Create New Game"
-            onClick={this.createNewGame}
+            onClick={handleCreateGame}
             disabled={false}
           />
         </Box>

@@ -2,7 +2,10 @@ import React from "react";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware, compose } from "redux";
 import * as firebase from "firebase";
+import { ThemeProvider } from "@material-ui/core/styles";
+
 import firebaseConfig from "../../firebase.json";
+import CodeNamesTheme from "../themes/codenameTheme";
 
 import reducers from "../reducers";
 
@@ -29,7 +32,9 @@ class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
-        <MainContainer />
+        <ThemeProvider theme={CodeNamesTheme}>
+          <MainContainer />
+        </ThemeProvider>
       </Provider>
     );
   }

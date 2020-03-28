@@ -5,10 +5,14 @@ import CreateGame from "../components/CreateGame";
 import GameList from "../components/GameList";
 
 class DashBoardContainer extends React.Component {
+  createGame = () => {
+    console.log("hello wrold");
+  };
+
   render() {
     return (
       <div>
-        <CreateGame />
+        <CreateGame handleCreateGame={this.createGame} />
         <GameList />
       </div>
     );
