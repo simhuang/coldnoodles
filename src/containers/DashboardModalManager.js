@@ -11,6 +11,8 @@ import {
   closeJoinGameModal
 } from "../actions/modalAction";
 
+import { createNewGame } from "../actions/createGame";
+
 class DashboardModalManager extends React.Component {
   handleOnClose = () => {
     this.props.dispatch(closeCreateGameModal());
@@ -19,6 +21,7 @@ class DashboardModalManager extends React.Component {
 
   createGame = () => {
     console.log("created a game");
+    this.props.dispatch(createNewGame());
   };
 
   joinGame = () => {
