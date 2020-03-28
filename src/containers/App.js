@@ -8,7 +8,7 @@ import reducers from "../reducers";
 
 import MainContainer from "./MainContainer";
 
-// const store = createStore(reducers);
+const store = createStore(reducers);
 
 class App extends React.Component {
   componentDidMount() {
@@ -19,12 +19,13 @@ class App extends React.Component {
      */
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
+    console.log("server: firebase initialized...");
   }
   render() {
     return (
-      // <Provider store={store}>
-      <MainContainer />
-      // </Provider>
+      <Provider store={store}>
+        <MainContainer />
+      </Provider>
     );
   }
 }

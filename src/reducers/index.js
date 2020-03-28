@@ -1,5 +1,9 @@
 import { combineReducers } from "redux";
 
-const combinedReducers = {};
+import userActionReducer from "./userAction";
+
+const combinedReducers = {
+  userState: userActionReducer
+};
 
 export default combineReducers(combinedReducers);

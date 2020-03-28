@@ -1,0 +1,2 @@
+export const DASHBOARD_SCREEN = "DASHBOARD_SCREEN";
+export const GAME_SCREEN = "GAME_SCREEN";
