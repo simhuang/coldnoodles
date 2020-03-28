@@ -17,6 +17,14 @@ class DashboardModalManager extends React.Component {
     this.props.dispatch(closeJoinGameModal());
   };
 
+  createGame = () => {
+    console.log("created a game");
+  };
+
+  joinGame = () => {
+    console.log("joined a game");
+  };
+
   render() {
     const {
       joinGameModalIsOpen,
@@ -28,10 +36,12 @@ class DashboardModalManager extends React.Component {
         <JoinGameModal
           isOpen={joinGameModalIsOpen}
           onClose={this.handleOnClose}
+          joinGame={this.joinGame}
         />
         <CreateGameModal
           isOpen={createGameModalIsOpen}
           onClose={this.handleOnClose}
+          createGame={this.createGame}
         />
       </React.Fragment>
     );

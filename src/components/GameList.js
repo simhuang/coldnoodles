@@ -9,7 +9,7 @@ class GameList extends React.Component {
           textAlign: "center"
         }}
       >
-        <Typography variant="h1">Current Games</Typography>
+        <Typography variant="h1">Current Open Games</Typography>
       </div>
     );
   }

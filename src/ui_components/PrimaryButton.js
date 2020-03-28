@@ -10,7 +10,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const PrimaryButton = ({ onClick, label, disabled }) => {
+const PrimaryButton = ({ onClick, label, disabled, fullWidth }) => {
   const classes = useStyles();
   return (
     <Button
@@ -20,6 +20,7 @@ const PrimaryButton = ({ onClick, label, disabled }) => {
       variant="contained"
       onClick={onClick}
       disabled={disabled}
+      fullWidth={fullWidth}
     >
       {label}
     </Button>
