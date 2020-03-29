@@ -11,7 +11,7 @@ class GameList extends React.Component {
   };
 
   render() {
-    const { gameList } = this.props;
+    const { gameList, handleGameCardClick } = this.props;
     return (
       <div
         style={{
@@ -23,7 +23,7 @@ class GameList extends React.Component {
         </Box>
         <Box>
           {gameList.map(game => {
-            return <GameCard title={game.name} />;
+            return <GameCard title={game.name} onClick={handleGameCardClick} />;
           })}
         </Box>
       </div>

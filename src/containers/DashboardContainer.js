@@ -14,6 +14,7 @@ import {
 
 // import { getAllOpenGames } from "../actions/createGame";
 import { newGameCreatedListener } from "../actions/firebaseListener";
+import { setSelectedGame } from "../actions/userAction";
 
 class DashBoardContainer extends React.Component {
   state = {
@@ -38,13 +39,23 @@ class DashBoardContainer extends React.Component {
     this.props.dispatch(openCreateGameModal());
   };
 
+  handleGameCardClick = e => {
+    const { dispatch } = this.props;
+    const gameRoomName = e.target.textContent;
+    dispatch(openJoinGameModal());
+    dispatch(setSelectedGame(gameRoomName));
+  };
+
   render() {
     const { gameList } = this.props;
     return (
       <div>
         <DashboardModalManager />
         <CreateGame handleCreateGame={this.createGame} />
-        <GameList gameList={gameList.games} />
+        <GameList
+          gameList={gameList.games}
+          handleGameCardClick={this.handleGameCardClick}
+        />
       </div>
     );
   }

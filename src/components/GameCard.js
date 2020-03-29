@@ -9,7 +9,9 @@ class GameCard extends React.Component {
     const { onClick, title } = this.props;
     return (
       <Card handleClick={onClick}>
-        <Typography variant="h1">{title}</Typography>
+        <Typography variant="h1" value={title} name={title}>
+          {title}
+        </Typography>
       </Card>
     );
   }

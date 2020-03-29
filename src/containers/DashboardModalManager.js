@@ -12,6 +12,9 @@ import {
 } from "../actions/modalAction";
 
 import { createNewGame } from "../actions/createGame";
+import { setUserScreen } from "../actions/userAction";
+
+import { GAME_SCREEN } from "../constants/userState";
 
 class DashboardModalManager extends React.Component {
   handleOnClose = () => {
@@ -25,7 +28,8 @@ class DashboardModalManager extends React.Component {
   };
 
   joinGame = () => {
-    console.log("joined a game");
+    const { dispatch } = this.props;
+    dispatch(setUserScreen(GAME_SCREEN));
   };
 
   render() {

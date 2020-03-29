@@ -16,7 +16,7 @@ class JoinGameModal extends React.Component {
   };
 
   handleOnClick = () => {
-    this.props.joinGame(this.state.gameName);
+    this.props.joinGame();
     this.props.onClose();
   };
 
@@ -24,7 +24,7 @@ class JoinGameModal extends React.Component {
     const { isOpen, onClose } = this.props;
     return (
       <Modal isOpen={isOpen} onClose={onClose}>
-        <Typography variant="h1">Create New Game</Typography>
+        <Typography variant="h1">Join Game</Typography>
         <InputField
           placeholder="Enter a name"
           value={this.state.nickName}
