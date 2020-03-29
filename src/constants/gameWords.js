@@ -75,7 +75,7 @@ export const words = [
   "Unicorn",
   "Undertaker",
   "Sock",
-  "Loch Ness",
+  "LochNess",
   "Horse",
   "Berlin",
   "Platypus",
@@ -162,241 +162,241 @@ export const words = [
   "Kid",
   "Piano",
   "Laser",
-  "Sound"
-  // Pole
-  // Superhero
-  // Revolution
-  // Pit
-  // Gas
-  // Glass
-  // Washington
-  // Bark
-  // Snow
-  // Ivory
-  // Pipe
-  // Cover
-  // Degree
-  // Tokyo
-  // Church
-  // Pie
-  // Tube
-  // Block
-  // Comic
-  // Fish
-  // Bridge
-  // Moon
-  // Part
-  // Aztec
-  // Smuggler
-  // Train
-  // Embassy
-  // Pupil
-  // Scuba Diver
-  // Ice
-  // Tap
-  // Code
-  // Shoe
-  // Server
-  // Club
-  // Row
-  // Pyramid
-  // Bug
-  // Penguin
-  // Pound
-  // Himalayas
-  // Czech
-  // Rome
-  // Eye
-  // Board
-  // Bed
-  // Point
-  // France
-  // Mammoth
-  // Cotton
-  // Robin
-  // Net
-  // Bugle
-  // Maple
-  // England
-  // Field
-  // Robot
-  // Plot
-  // Africa
-  // Tag
-  // Mouth
-  // Kiwi
-  // Mole
-  // School
-  // Sink
-  // Pistol
-  // Opera
-  // Mint
-  // Root
-  // Sub
-  // Crown
-  // Back
-  // Plane
-  // Mexico
-  // Cloak
-  // Circle
-  // Tablet
-  // Australia
-  // Green
-  // Egypt
-  // Line
-  // Lawyer
-  // Witch
-  // Parachute
-  // Crash
-  // Gold
-  // Note
-  // Lion
-  // Plastic
-  // Web
-  // Ambulance
-  // Hospital
-  // Spell
-  // Lock
-  // Water
-  // London
-  // Casino
-  // Cycle
-  // Bar
-  // Cliff
-  // Round
-  // Bomb
-  // Giant
-  // Hand
-  // Ninja
-  // Rose
-  // Slip
-  // Limousine
-  // Pass
-  // Theater
-  // Plate
-  // Satellite
-  // Ketchup
-  // Hotel
-  // Tail
-  // Tick
-  // Ground
-  // Police
-  // Dwarf
-  // Fan
-  // Dress
-  // Saturn
-  // Grass
-  // Brush
-  // Chair
-  // Rock
-  // Pilot
-  // Telescope
-  // File
-  // Lab
-  // India
-  // Ruler
-  // Nail
-  // Swing
-  // Olympus
-  // Change
-  // Date
-  // Stream
-  // Missile
-  // Scale
-  // Band
-  // Angel
-  // Press
-  // Berry
-  // Card
-  // Check
-  // Draft
-  // Head
-  // Lap
-  // Orange
-  // Ice Cream
-  // Film
-  // Washer
-  // Pool
-  // Shark
-  // Van
-  // String
-  // Calf
-  // Hawk
-  // Eagle
-  // Needle
-  // Forest
-  // Dragon
-  // Key
-  // Belt
-  // Cap
-  // Drill
-  // Glove
-  // Paste
-  // Fall
-  // Fire
-  // Spider
-  // Spine
-  // Soldier
-  // Horn
-  // Queen
-  // Ham
-  // Litter
-  // Life
-  // Temple
-  // Rabbit
-  // Button
-  // Game
-  // Star
-  // Jupiter
-  // Vet
-  // Night
-  // Air
-  // Battery
-  // Genious
-  // Shop
-  // Bottle
-  // Stadium
-  // Alien
-  // Light
-  // Triangle
-  // Lemon
-  // Nurse
-  // Drop
-  // Track
-  // Bank
-  // Germany
-  // Worm
-  // Ray
-  // Capital
-  // Strike
-  // War
-  // Concert
-  // Honey
-  // Canada
-  // Buck
-  // Snowman
-  // Beat
-  // Jam
-  // Copper
-  // Beach
-  // Bell
-  // Leprechaun
-  // Pheonix
-  // Force
-  // Boom
-  // Fork
-  // Alps
-  // Post
-  // Fence
-  // Kangaroo
-  // Mouse
-  // Mug
-  // Horseshoe
-  // Scorpion
-  // Agent
-  // Helicopter
-  // Hole
-  // Organ
-  // Jack
-  // Charge
+  "Sound",
+  "Pole",
+  "Superhero",
+  "Revolution",
+  "Pit",
+  "Gas",
+  "Glass",
+  "Washington",
+  "Bark",
+  "Snow",
+  "Ivory",
+  "Pipe",
+  "Cover",
+  "Degree",
+  "Tokyo",
+  "Church",
+  "Pie",
+  "Tube",
+  "Block",
+  "Comic",
+  "Fish",
+  "Bridge",
+  "Moon",
+  "Part",
+  "Aztec",
+  "Smuggler",
+  "Train",
+  "Embassy",
+  "Pupil",
+  "ScubaDiver",
+  "Ice",
+  "Tap",
+  "Code",
+  "Shoe",
+  "Server",
+  "Club",
+  "Row",
+  "Pyramid",
+  "Bug",
+  "Penguin",
+  "Pound",
+  "Himalayas",
+  "Czech",
+  "Rome",
+  "Eye",
+  "Board",
+  "Bed",
+  "Point",
+  "France",
+  "Mammoth",
+  "Cotton",
+  "Robin",
+  "Net",
+  "Bugle",
+  "Maple",
+  "England",
+  "Field",
+  "Robot",
+  "Plot",
+  "Africa",
+  "Tag",
+  "Mouth",
+  "Kiwi",
+  "Mole",
+  "School",
+  "Sink",
+  "Pistol",
+  "Opera",
+  "Mint",
+  "Root",
+  "Sub",
+  "Crown",
+  "Back",
+  "Plane",
+  "Mexico",
+  "Cloak",
+  "Circle",
+  "Tablet",
+  "Australia",
+  "Green",
+  "Egypt",
+  "Line",
+  "Lawyer",
+  "Witch",
+  "Parachute",
+  "Crash",
+  "Gold",
+  "Note",
+  "Lion",
+  "Plastic",
+  "Web",
+  "Ambulance",
+  "Hospital",
+  "Spell",
+  "Lock",
+  "Water",
+  "London",
+  "Casino",
+  "Cycle",
+  "Bar",
+  "Cliff",
+  "Round",
+  "Bomb",
+  "Giant",
+  "Hand",
+  "Ninja",
+  "Rose",
+  "Slip",
+  "Limousine",
+  "Pass",
+  "Theater",
+  "Plate",
+  "Satellite",
+  "Ketchup",
+  "Hotel",
+  "Tail",
+  "Tick",
+  "Ground",
+  "Police",
+  "Dwarf",
+  "Fan",
+  "Dress",
+  "Saturn",
+  "Grass",
+  "Brush",
+  "Chair",
+  "Rock",
+  "Pilot",
+  "Telescope",
+  "File",
+  "Lab",
+  "India",
+  "Ruler",
+  "Nail",
+  "Swing",
+  "Olympus",
+  "Change",
+  "Date",
+  "Stream",
+  "Missile",
+  "Scale",
+  "Band",
+  "Angel",
+  "Press",
+  "Berry",
+  "Card",
+  "Check",
+  "Draft",
+  "Head",
+  "Lap",
+  "Orange",
+  "IceCream",
+  "Film",
+  "Washer",
+  "Pool",
+  "Shark",
+  "Van",
+  "String",
+  "Calf",
+  "Hawk",
+  "Eagle",
+  "Needle",
+  "Forest",
+  "Dragon",
+  "Key",
+  "Belt",
+  "Cap",
+  "Drill",
+  "Glove",
+  "Paste",
+  "Fall",
+  "Fire",
+  "Spider",
+  "Spine",
+  "Soldier",
+  "Horn",
+  "Queen",
+  "Ham",
+  "Litter",
+  "Life",
+  "Temple",
+  "Rabbit",
+  "Button",
+  "Game",
+  "Star",
+  "Jupiter",
+  "Vet",
+  "Night",
+  "Air",
+  "Battery",
+  "Genious",
+  "Shop",
+  "Bottle",
+  "Stadium",
+  "Alien",
+  "Light",
+  "Triangle",
+  "Lemon",
+  "Nurse",
+  "Drop",
+  "Track",
+  "Bank",
+  "Germany",
+  "Worm",
+  "Ray",
+  "Capital",
+  "Strike",
+  "War",
+  "Concert",
+  "Honey",
+  "Canada",
+  "Buck",
+  "Snowman",
+  "Beat",
+  "Jam",
+  "Copper",
+  "Beach",
+  "Bell",
+  "Leprechaun",
+  "Pheonix",
+  "Force",
+  "Boom",
+  "Fork",
+  "Alps",
+  "Post",
+  "Fence",
+  "Kangaroo",
+  "Mouse",
+  "Mug",
+  "Horseshoe",
+  "Scorpion",
+  "Agent",
+  "Helicopter",
+  "Hole",
+  "Organ",
+  "Jack",
+  "Charge"
 ];

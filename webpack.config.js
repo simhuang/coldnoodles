@@ -22,6 +22,10 @@ module.exports = {
         test: /\.css$/,
         loader:
           "style-loader!css-loader?modules=true&localIdentName=[name]__[local]__[hash:base64:5]"
+      },
+      {
+        test: /\.(svg|png|jpg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: "url-loader"
       }
     ]
   },

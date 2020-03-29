@@ -14,6 +14,10 @@ const useStyles = makeStyles({
     minHeight: "150px",
     cursor: "pointer",
     display: "inline-block"
+    // "&:hover": {
+    //   background: "#FA8072",
+    //   opacity: 0.3
+    // }
   }
 });
 
@@ -27,9 +31,8 @@ const Card = ({
 }) => {
   const customClasses = useStyles();
   return (
-    <MuiCard classes={customClasses} variant="outlined">
+    <MuiCard onClick={handleClick} classes={customClasses} variant="outlined">
       <CardActionArea
-        onClick={handleClick}
         disabled={disabled}
         classes={classes}
         role={role}

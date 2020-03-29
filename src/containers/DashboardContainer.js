@@ -39,6 +39,9 @@ class DashBoardContainer extends React.Component {
     this.props.dispatch(openCreateGameModal());
   };
 
+  /**
+   * Click handler when user clicks on one of the game list card
+   */
   handleGameCardClick = e => {
     const { dispatch } = this.props;
     const gameRoomName = e.target.textContent;

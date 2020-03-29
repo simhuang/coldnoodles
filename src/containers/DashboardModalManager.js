@@ -18,12 +18,12 @@ import { GAME_SCREEN } from "../constants/userState";
 
 class DashboardModalManager extends React.Component {
   handleOnClose = () => {
-    this.props.dispatch(closeCreateGameModal());
-    this.props.dispatch(closeJoinGameModal());
+    const { dispatch } = this.props;
+    dispatch(closeCreateGameModal());
+    dispatch(closeJoinGameModal());
   };
 
   createGame = gameName => {
-    console.log("created a game");
     this.props.dispatch(createNewGame(gameName));
   };
 

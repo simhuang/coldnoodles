@@ -26,14 +26,14 @@ class JoinGameModal extends React.Component {
       <Modal isOpen={isOpen} onClose={onClose}>
         <Typography variant="h1">Join Game</Typography>
         <InputField
-          placeholder="Enter a name"
+          placeholder="Choose Your Name"
           value={this.state.nickName}
           onChange={this.onChange}
         />
         <PrimaryButton
           label="Join Game"
           onClick={this.handleOnClick}
-          disabled={this.state.gameName === ""}
+          disabled={this.state.nickName === ""}
           fullWidth
         />
       </Modal>
