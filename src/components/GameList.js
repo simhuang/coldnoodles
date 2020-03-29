@@ -1,15 +1,31 @@
 import React from "react";
-import { Typography } from "@material-ui/core";
+import PropTypes from "prop-types";
+import Typography from "@material-ui/core/Typography";
+import Box from "@material-ui/core/Box";
+
+import GameCard from "../components/GameCard";
 
 class GameList extends React.Component {
+  static propTypes = {
+    gameList: PropTypes.array.isRequired
+  };
+
   render() {
+    const { gameList } = this.props;
     return (
       <div
         style={{
           textAlign: "center"
         }}
       >
-        <Typography variant="h1">Current Open Games</Typography>
+        <Box mb={2}>
+          <Typography variant="h1">Current Open Games</Typography>
+        </Box>
+        <Box>
+          {gameList.map(game => {
+            return <GameCard title={game.name} />;
+          })}
+        </Box>
       </div>
     );
   }

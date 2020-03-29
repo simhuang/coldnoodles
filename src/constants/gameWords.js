@@ -147,22 +147,22 @@ export const words = [
   "Cell",
   "Bow",
   "Model",
-  "Knife"
-  // Knight
-  // Court
-  // Iron
-  // Whale
-  // Shadow
-  // Contract
-  // Mercury
-  // Conductor
-  // Seal
-  // Car
-  // Ring
-  // Kid
-  // Piano
-  // Laser
-  // Sound
+  "Knife",
+  "Knight",
+  "Court",
+  "Iron",
+  "Whale",
+  "Shadow",
+  "Contract",
+  "Mercury",
+  "Conductor",
+  "Seal",
+  "Car",
+  "Ring",
+  "Kid",
+  "Piano",
+  "Laser",
+  "Sound"
   // Pole
   // Superhero
   // Revolution

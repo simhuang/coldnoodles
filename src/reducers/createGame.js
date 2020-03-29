@@ -1,8 +1,7 @@
 import { CREATE_GAME, DELETE_GAME } from "../constants/actionTypes";
 
 const initialState = {
-  games: [],
-  totalGames: 0
+  games: []
 };
 
 const createGameReducer = (state = initialState, action) => {
@@ -10,13 +9,12 @@ const createGameReducer = (state = initialState, action) => {
     case CREATE_GAME: {
       return {
         ...state,
-        totalGames: totalGames + 1
+        games: action.payload
       };
     }
     case DELETE_GAME: {
       return {
-        ...state,
-        totalGames: totalGames - 1
+        ...state
       };
     }
     default: {

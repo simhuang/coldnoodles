@@ -7,7 +7,7 @@ import createGameReducer from "./createGame";
 const combinedReducers = {
   userState: userActionReducer,
   modalState: modalActionReducer,
-  gamelist: createGameReducer
+  gameList: createGameReducer
 };
 
 export default combineReducers(combinedReducers);

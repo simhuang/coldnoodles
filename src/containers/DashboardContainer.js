@@ -12,7 +12,7 @@ import {
   closeJoinGameModal
 } from "../actions/modalAction";
 
-import { getAllOpenGames } from "../actions/createGame";
+// import { getAllOpenGames } from "../actions/createGame";
 import { newGameCreatedListener } from "../actions/firebaseListener";
 
 class DashBoardContainer extends React.Component {
@@ -25,7 +25,7 @@ class DashBoardContainer extends React.Component {
    * instantiate listener to listener for new games
    */
   componentDidMount() {
-    this.props.dispatch(getAllOpenGames());
+    // this.props.dispatch(getAllOpenGames());
     const unsubscribe = this.props.dispatch(newGameCreatedListener());
     this.setState({ unsubscribe });
   }
@@ -39,18 +39,21 @@ class DashBoardContainer extends React.Component {
   };
 
   render() {
+    const { gameList } = this.props;
     return (
       <div>
         <DashboardModalManager />
         <CreateGame handleCreateGame={this.createGame} />
-        <GameList />
+        <GameList gameList={gameList.games} />
       </div>
     );
   }
 }
 
 const mapStateToProps = state => {
-  return {};
+  return {
+    gameList: state.gameList
+  };
 };
 
 export default connect(mapStateToProps)(DashBoardContainer);
