@@ -71,7 +71,7 @@ const WordCard = ({
   const classes = useStyles();
   return (
     <Card
-      onClick={e => onClick(position)}
+      onClick={e => !isSpyMaster && onClick(position)}
       classes={classes}
       style={{
         background: renderBackground()
