@@ -45,7 +45,7 @@ export const resetGame = () => (dispatch, getState) => {
     .update({
       keyMap,
       game,
-      players: [userName],
+      players: state.gamePlay.players,
       selection,
       spyMasters: []
     });
