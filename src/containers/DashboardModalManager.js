@@ -13,6 +13,7 @@ import {
 
 import { createNewGame } from "../actions/createGame";
 import { setUserScreen } from "../actions/userAction";
+import { setPlayerName } from "../actions/gamePlay";
 
 import { GAME_SCREEN } from "../constants/userState";
 
@@ -27,8 +28,9 @@ class DashboardModalManager extends React.Component {
     this.props.dispatch(createNewGame(gameName));
   };
 
-  joinGame = () => {
+  joinGame = nickName => {
     const { dispatch } = this.props;
+    dispatch(setPlayerName(nickName));
     dispatch(setUserScreen(GAME_SCREEN));
   };
 

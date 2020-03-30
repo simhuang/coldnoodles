@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography } from "@material-ui/core";
 
-class PlayerList extends React.Component {
+class SpyMasterList extends React.Component {
   render() {
     const { names } = this.props;
     return (
@@ -11,7 +11,7 @@ class PlayerList extends React.Component {
             fontWeight: "bold"
           }}
         >
-          Players
+          Spy Masters
         </Typography>
         ;
         {names.map(name => {
@@ -22,4 +22,4 @@ class PlayerList extends React.Component {
   }
 }
 
-export default PlayerList;
+export default SpyMasterList;

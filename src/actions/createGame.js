@@ -27,7 +27,8 @@ export const createNewGame = gameName => dispatch => {
       keyMap,
       game,
       players: [],
-      selection
+      selection,
+      spyMasters: []
     });
 };
 

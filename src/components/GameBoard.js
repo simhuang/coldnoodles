@@ -3,7 +3,7 @@ import WordCard from "../components/WordCard";
 
 class GameBoard extends React.Component {
   render() {
-    const { game, map, selection, onClick } = this.props;
+    const { game, map, selection, onClick, isSpyMaster } = this.props;
     return (
       <div
         style={{
@@ -20,7 +20,7 @@ class GameBoard extends React.Component {
             isSelected={selection[index]}
             key={card}
             map={map}
-            isSpyMaster={true}
+            isSpyMaster={isSpyMaster}
           />
         ))}
       </div>

@@ -16,7 +16,7 @@ class JoinGameModal extends React.Component {
   };
 
   handleOnClick = () => {
-    this.props.joinGame();
+    this.props.joinGame(this.state.nickName);
     this.props.onClose();
   };
 
