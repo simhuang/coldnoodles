@@ -4,6 +4,7 @@ import GameBoard from "../components/GameBoard";
 import SpyMasterToggle from "../components/SpyMasterToggle";
 import SpyMasterList from "../components/SpyMasterList";
 import PlayerList from "../components/PlayerList";
+import Box from "@material-ui/core/Box";
 
 import { gamePlayListener } from "../actions/firebaseListener";
 import {
@@ -39,25 +40,38 @@ class GameContainer extends React.Component {
   render() {
     const { gameState } = this.props;
     return (
-      <div>
-        <SpyMasterToggle
-          checked={this.state.isSpyMaster}
-          onChange={this.onSpyMasterToggle}
-          disabled={
-            gameState.spyMasters.length === 2 && !this.state.isSpyMaster
-          }
-        />
-
-        <GameBoard
-          onClick={this.handleCardClick}
-          game={gameState.game}
-          map={gameState.keyMap}
-          selection={gameState.selection}
-          isSpyMaster={this.state.isSpyMaster}
-        />
-        <SpyMasterList names={gameState.spyMasters} />
-        <PlayerList names={gameState.players} />
-      </div>
+      <Box
+        style={{
+          display: "flex"
+        }}
+      >
+        <Box>
+          <GameBoard
+            onClick={this.handleCardClick}
+            game={gameState.game}
+            map={gameState.keyMap}
+            selection={gameState.selection}
+            isSpyMaster={this.state.isSpyMaster}
+          />
+        </Box>
+        <Box
+          style={{
+            minWidth: "100px"
+          }}
+        >
+          <SpyMasterToggle
+            checked={this.state.isSpyMaster}
+            onChange={this.onSpyMasterToggle}
+            disabled={
+              gameState.spyMasters.length === 2 && !this.state.isSpyMaster
+            }
+          />
+          <SpyMasterList names={gameState.spyMasters} />
+          <Box mt={2}>
+            <PlayerList names={gameState.players} />
+          </Box>
+        </Box>
+      </Box>
     );
   }
 }

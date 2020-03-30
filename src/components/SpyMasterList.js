@@ -14,7 +14,7 @@ class SpyMasterList extends React.Component {
           Spy Masters
         </Typography>
         {names.map(name => {
-          return <Typography component="span">{`${name} `}</Typography>;
+          return <Typography>{name}</Typography>;
         })}
       </div>
     );
