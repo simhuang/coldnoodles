@@ -13,7 +13,6 @@ class PlayerList extends React.Component {
         >
           Players
         </Typography>
-        ;
         {names.map(name => {
           return <Typography component="span">{`${name} `}</Typography>;
         })}
