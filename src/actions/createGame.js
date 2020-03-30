@@ -19,8 +19,8 @@ export const createNewGame = gameName => dispatch => {
   const game = generateGameWords();
   const keyMap = generateKeyMap();
   const selection = instantiateToFalseSelected();
-  console.log(selection);
   const db = firebase.firestore();
+  gameName = gameName.replace(" ", "-");
   db.collection(GAMES)
     .doc(gameName)
     .set({

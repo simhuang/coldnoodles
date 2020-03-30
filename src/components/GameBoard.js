@@ -1,10 +1,9 @@
 import React from "react";
-import GameCard from "../components/GameCard";
 import WordCard from "../components/WordCard";
 
 class GameBoard extends React.Component {
   render() {
-    const { game, map, selection } = this.props;
+    const { game, map, selection, onClick } = this.props;
     return (
       <div
         style={{
@@ -15,10 +14,13 @@ class GameBoard extends React.Component {
       >
         {game.map((card, index) => (
           <WordCard
+            onClick={onClick}
             label={card}
             position={index}
-            selected={selection[index]}
+            isSelected={selection[index]}
             key={card}
+            map={map}
+            isSpyMaster={true}
           />
         ))}
       </div>

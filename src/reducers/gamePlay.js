@@ -10,7 +10,7 @@ const initialState = {
   keyMap: [],
   players: [],
   playerName: "",
-  selected: []
+  selection: []
 };
 
 const gamePlayReducer = (state = initialState, action) => {

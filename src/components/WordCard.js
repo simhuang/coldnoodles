@@ -30,7 +30,14 @@ const useStyles = makeStyles({
   }
 });
 
-const WordCard = ({ isSelected, label, onClick, position, map }) => {
+const WordCard = ({
+  isSelected,
+  label,
+  onClick,
+  position,
+  map,
+  isSpyMaster
+}) => {
   const renderPicture = () => {
     if (map[position] === "BLUE") {
       return blue;
@@ -47,9 +54,29 @@ const WordCard = ({ isSelected, label, onClick, position, map }) => {
     return bomb;
   };
 
+  const renderBackground = () => {
+    if (isSpyMaster && map) {
+      if (map[position] === "BLUE") {
+        return "#58ACFA";
+      } else if (map[position] === "RED") {
+        return "#F7819F";
+      } else if (map[position] === "NEUTRAL") {
+        return "#F3E2A9";
+      } else if (map[position] === "BOMB") {
+        return "#848484";
+      }
+    }
+  };
+
   const classes = useStyles();
   return (
-    <Card onClick={onClick} classes={classes}>
+    <Card
+      onClick={e => onClick(position)}
+      classes={classes}
+      style={{
+        background: renderBackground()
+      }}
+    >
       {isSelected ? (
         <CardMedia
           component="img"

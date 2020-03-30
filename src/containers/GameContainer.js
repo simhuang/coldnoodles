@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import GameBoard from "../components/GameBoard";
 
 import { gamePlayListener } from "../actions/firebaseListener";
+import { selectKeyCard, updateGameMapReduxState } from "../actions/gamePlay";
 
 class GameContainer extends React.Component {
   componentDidMount() {
@@ -10,12 +11,19 @@ class GameContainer extends React.Component {
     const gameJoined = userState.game;
     dispatch(gamePlayListener(gameJoined));
   }
+
+  handleCardClick = position => {
+    const { dispatch, gameState } = this.props;
+    dispatch(updateGameMapReduxState(position, gameState.selection));
+    dispatch(selectKeyCard(position));
+  };
+
   render() {
     const { gameState } = this.props;
-    console.log(gameState);
     return (
       <div>
         <GameBoard
+          onClick={this.handleCardClick}
           game={gameState.game}
           map={gameState.keyMap}
           selection={gameState.selection}
@@ -26,7 +34,6 @@ class GameContainer extends React.Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
     userState: state.userState,
     gameState: state.gamePlay
