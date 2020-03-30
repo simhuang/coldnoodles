@@ -1,10 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
+import Box from "@material-ui/core/Box";
 import GameBoard from "../components/GameBoard";
 import SpyMasterToggle from "../components/SpyMasterToggle";
 import SpyMasterList from "../components/SpyMasterList";
 import PlayerList from "../components/PlayerList";
-import Box from "@material-ui/core/Box";
+import PrimaryButton from "../ui_components/PrimaryButton";
 
 import { gamePlayListener } from "../actions/firebaseListener";
 import {
@@ -12,6 +13,8 @@ import {
   updateGameMapReduxState,
   selectSpyMaster
 } from "../actions/gamePlay";
+
+import { resetGame } from "../actions/createGame";
 
 class GameContainer extends React.Component {
   componentDidMount() {
@@ -26,7 +29,6 @@ class GameContainer extends React.Component {
 
   onSpyMasterToggle = () => {
     this.setState({ isSpyMaster: !this.state.isSpyMaster }, () => {
-      console.log("heloo wrold");
       this.props.dispatch(selectSpyMaster(this.state.isSpyMaster));
     });
   };
@@ -35,6 +37,10 @@ class GameContainer extends React.Component {
     const { dispatch, gameState } = this.props;
     dispatch(updateGameMapReduxState(position, gameState.selection));
     dispatch(selectKeyCard(position));
+  };
+
+  resetGame = () => {
+    this.props.dispatch(resetGame());
   };
 
   render() {
@@ -59,6 +65,9 @@ class GameContainer extends React.Component {
             minWidth: "100px"
           }}
         >
+          <Box>
+            <PrimaryButton label="Reset Game" onClick={this.resetGame} />
+          </Box>
           <SpyMasterToggle
             checked={this.state.isSpyMaster}
             onChange={this.onSpyMasterToggle}

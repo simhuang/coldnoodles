@@ -12,8 +12,8 @@ import red from "../../static/images/red-2.png";
 import neutral from "../../static/images/neutral-1.png";
 import bomb from "../../static/images/assassin.jpg";
 
-const CARD_HEIGHT = "130px";
-const CARD_WIDTH = "210px";
+const CARD_HEIGHT = "110px";
+const CARD_WIDTH = "190px";
 
 const useStyles = makeStyles({
   root: {

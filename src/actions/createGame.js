@@ -32,6 +32,25 @@ export const createNewGame = gameName => dispatch => {
     });
 };
 
+export const resetGame = () => (dispatch, getState) => {
+  const state = getState();
+  const game = generateGameWords();
+  const keyMap = generateKeyMap();
+  const selection = instantiateToFalseSelected();
+  const db = firebase.firestore();
+  const gameName = state.userState.game;
+  const userName = state.gamePlay.playerName;
+  db.collection(GAMES)
+    .doc(gameName)
+    .update({
+      keyMap,
+      game,
+      players: [userName],
+      selection,
+      spyMasters: []
+    });
+};
+
 export const updateGameCardsForRedux = gameCards => {
   return {
     type: CREATE_GAME,

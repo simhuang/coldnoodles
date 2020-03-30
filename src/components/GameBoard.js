@@ -8,7 +8,7 @@ class GameBoard extends React.Component {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "220px 220px 220px 220px 220px",
+          gridTemplateColumns: "200px 200px 200px 200px 200px",
           gridGap: "20px"
         }}
       >
