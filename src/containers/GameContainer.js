@@ -17,6 +17,9 @@ import {
 } from "../actions/gamePlay";
 
 import { resetGame } from "../actions/createGame";
+import { setUserScreen } from "../actions/userAction";
+
+import { DASHBOARD_SCREEN } from "../constants/userState";
 
 class GameContainer extends React.Component {
   componentDidMount() {
@@ -24,7 +27,7 @@ class GameContainer extends React.Component {
     const gameJoined = userState.game;
     dispatch(gamePlayListener(gameJoined));
     window.addEventListener("beforeunload", event => {
-      leaveGameRoom();
+      dispatch(leaveGameRoom());
     });
   }
 
@@ -52,6 +55,12 @@ class GameContainer extends React.Component {
     this.setState({ isSpyMaster: false }, () => {
       this.props.dispatch(resetSpyMasters());
     });
+  };
+
+  leaveGame = () => {
+    const { dispatch } = this.props;
+    dispatch(leaveGameRoom());
+    dispatch(setUserScreen(DASHBOARD_SCREEN));
   };
 
   render() {
@@ -84,23 +93,42 @@ class GameContainer extends React.Component {
             minWidth: "100px"
           }}
         >
-          <Box>
-            <PrimaryButton
-              label="Reset Game"
-              onClick={this.resetGame}
-              fullWidth
-            />
-          </Box>
-          <SpyMasterToggle
-            checked={this.state.isSpyMaster}
-            onChange={this.onSpyMasterToggle}
-            disabled={
-              gameState.spyMasters.length === 2 && !this.state.isSpyMaster
-            }
-          />
-          <SpyMasterList names={gameState.spyMasters} />
-          <Box mt={2}>
-            <PlayerList names={gameState.players} />
+          <Box
+            style={{
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between"
+            }}
+          >
+            {" "}
+            <Box>
+              <Box>
+                <PrimaryButton
+                  label="Reset Game"
+                  onClick={this.resetGame}
+                  fullWidth
+                />
+              </Box>
+              <SpyMasterToggle
+                checked={this.state.isSpyMaster}
+                onChange={this.onSpyMasterToggle}
+                disabled={
+                  gameState.spyMasters.length === 2 && !this.state.isSpyMaster
+                }
+              />
+              <SpyMasterList names={gameState.spyMasters} />
+              <Box mt={2}>
+                <PlayerList names={gameState.players} />
+              </Box>
+            </Box>
+            <Box>
+              <PrimaryButton
+                label="Leave Game"
+                onClick={this.leaveGame}
+                fullWidth
+              />
+            </Box>
           </Box>
         </Box>
       </Box>

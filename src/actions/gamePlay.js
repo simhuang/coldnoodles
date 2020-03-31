@@ -75,8 +75,8 @@ export const setPlayerName = nickname => (dispatch, getState) => {
 
 export const leaveGameRoom = () => (dispatch, getState) => {
   const state = getState();
-  const gamePlay = state.gamePlay;
-  const username = gamePlay.gameName;
+  const { gamePlay, userState } = state;
+  const username = gamePlay.playerName;
   const db = firebase.firestore();
   db.collection(GAMES)
     .doc(userState.game)
