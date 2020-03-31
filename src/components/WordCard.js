@@ -17,6 +17,7 @@ const CARD_WIDTH = "190px";
 
 const useStyles = makeStyles({
   root: {
+    background: "#FBF9E1",
     cursor: "pointer",
     minWidth: CARD_WIDTH,
     maxWidth: CARD_WIDTH,

@@ -46,10 +46,20 @@ export const selectSpyMaster = shouldAdd => (dispatch, getState) => {
     });
 };
 
+export const resetSpyMasters = () => (dispatch, getState) => {
+  const state = getState();
+  const userState = state.userState;
+  const db = firebase.firestore();
+  db.collection(GAMES)
+    .doc(userState.game)
+    .update({
+      spyMasters: []
+    });
+};
+
 export const setPlayerName = nickname => (dispatch, getState) => {
   const state = getState();
   const userState = state.userState;
-  const gamePlay = state.gamePlay;
   const db = firebase.firestore();
   db.collection(GAMES)
     .doc(userState.game)
@@ -61,6 +71,18 @@ export const setPlayerName = nickname => (dispatch, getState) => {
     type: SET_PLAYER_NAME,
     payload: nickname
   });
+};
+
+export const leaveGameRoom = () => (dispatch, getState) => {
+  const state = getState();
+  const gamePlay = state.gamePlay;
+  const username = gamePlay.gameName;
+  const db = firebase.firestore();
+  db.collection(GAMES)
+    .doc(userState.game)
+    .update({
+      players: firebase.firestore.FieldValue.arrayRemove(username)
+    });
 };
 
 export const instantiateGameData = gameData => {

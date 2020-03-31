@@ -11,7 +11,9 @@ import { gamePlayListener } from "../actions/firebaseListener";
 import {
   selectKeyCard,
   updateGameMapReduxState,
-  selectSpyMaster
+  selectSpyMaster,
+  resetSpyMasters,
+  leaveGameRoom
 } from "../actions/gamePlay";
 
 import { resetGame } from "../actions/createGame";
@@ -21,6 +23,9 @@ class GameContainer extends React.Component {
     const { dispatch, userState } = this.props;
     const gameJoined = userState.game;
     dispatch(gamePlayListener(gameJoined));
+    window.addEventListener("beforeunload", event => {
+      leaveGameRoom();
+    });
   }
 
   state = {
@@ -39,8 +44,14 @@ class GameContainer extends React.Component {
     dispatch(selectKeyCard(position));
   };
 
+  /**
+   * Reset the game and remove existing spy masters
+   */
   resetGame = () => {
     this.props.dispatch(resetGame());
+    this.setState({ isSpyMaster: false }, () => {
+      this.props.dispatch(resetSpyMasters());
+    });
   };
 
   render() {
@@ -48,10 +59,12 @@ class GameContainer extends React.Component {
     return (
       <Box
         style={{
-          display: "flex"
+          display: "flex",
+          justifyContent: "center"
         }}
+        mt={5}
       >
-        <Box>
+        <Box component="div">
           <GameBoard
             onClick={this.handleCardClick}
             game={gameState.game}
@@ -61,12 +74,22 @@ class GameContainer extends React.Component {
           />
         </Box>
         <Box
+          borderColor="primary.main"
+          border={1}
+          borderRadius={5}
+          px={2}
+          py={2}
+          component="div"
           style={{
             minWidth: "100px"
           }}
         >
           <Box>
-            <PrimaryButton label="Reset Game" onClick={this.resetGame} />
+            <PrimaryButton
+              label="Reset Game"
+              onClick={this.resetGame}
+              fullWidth
+            />
           </Box>
           <SpyMasterToggle
             checked={this.state.isSpyMaster}
