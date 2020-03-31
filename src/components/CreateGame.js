@@ -12,7 +12,7 @@ class CreateGame extends React.Component {
           textAlign: "center"
         }}
       >
-        <Box mt={10} mb={10}>
+        <Box mt={5} mb={5} pb={5}>
           <PrimaryButton
             label="Create New Game"
             onClick={handleCreateGame}

@@ -15,6 +15,8 @@ import {
 // import { getAllOpenGames } from "../actions/createGame";
 import { newGameCreatedListener } from "../actions/firebaseListener";
 import { setSelectedGame } from "../actions/userAction";
+import { Typography } from "@material-ui/core";
+import Box from "@material-ui/core/Box";
 
 class DashBoardContainer extends React.Component {
   state = {
@@ -54,6 +56,21 @@ class DashBoardContainer extends React.Component {
     return (
       <div>
         <DashboardModalManager />
+        <Box
+          mt={3}
+          style={{
+            textAlign: "center"
+          }}
+        >
+          <Typography
+            style={{
+              fontSize: "28px"
+            }}
+            variant="h1"
+          >
+            Codenames Online
+          </Typography>
+        </Box>
         <CreateGame handleCreateGame={this.createGame} />
         <GameList
           gameList={gameList.games}
