@@ -6,6 +6,7 @@ import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
+import Box from "@material-ui/core/Box";
 
 import blue from "../../static/images/blue-1.png";
 import red from "../../static/images/red-2.png";
@@ -79,13 +80,36 @@ const WordCard = ({
       }}
     >
       {isSelected ? (
-        <CardMedia
-          component="img"
-          height={CARD_HEIGHT}
-          width={CARD_WIDTH}
-          title="image"
-          image={renderPicture()}
-        />
+        <Box
+          style={{
+            position: "relative"
+          }}
+        >
+          <CardMedia
+            style={{
+              display: "relative"
+            }}
+            component="img"
+            height={CARD_HEIGHT}
+            width={CARD_WIDTH}
+            title="image"
+            image={renderPicture()}
+          />
+          <Box
+            pl={0.5}
+            pt={0.5}
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              textAlign: "center"
+            }}
+          >
+            <Typography style={{ color: "#fff", opacity: ".3" }}>
+              {label}
+            </Typography>
+          </Box>
+        </Box>
       ) : (
         <CardContent>
           <Typography>{label}</Typography>
