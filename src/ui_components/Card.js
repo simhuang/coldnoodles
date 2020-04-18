@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import CardActionArea from "@material-ui/core/CardActionArea";
 
 import MuiCard from "@material-ui/core/Card";
 import { makeStyles } from "@material-ui/core/styles";
@@ -13,12 +12,13 @@ const useStyles = makeStyles({
     maxWidth: "200px",
     minHeight: "150px",
     cursor: "pointer",
-    display: "inline-block"
+    display: "inline-block",
     // "&:hover": {
     //   background: "#FA8072",
-    //   opacity: 0.3
-    // }
-  }
+    //   // opacity: 0.3,
+    //   color: "#000",
+    // },
+  },
 });
 
 const Card = ({
@@ -27,19 +27,12 @@ const Card = ({
   disabled,
   handleClick,
   role,
-  dataTestId
+  dataTestId,
 }) => {
   const customClasses = useStyles();
   return (
     <MuiCard onClick={handleClick} classes={customClasses} variant="outlined">
-      <CardActionArea
-        disabled={disabled}
-        classes={classes}
-        role={role}
-        data-testid={dataTestId}
-      >
-        {children}
-      </CardActionArea>
+      {children}
     </MuiCard>
   );
 };
@@ -50,7 +43,7 @@ Card.propTypes = {
   classes: PropTypes.shape(0),
   handleClick: PropTypes.func,
   role: PropTypes.string,
-  dataTestId: PropTypes.string
+  dataTestId: PropTypes.string,
 };
 
 export default Card;
