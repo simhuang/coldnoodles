@@ -57,6 +57,10 @@ class GameContainer extends React.Component {
     });
   };
 
+  componentWillUnmount() {
+    this.leaveGame();
+  }
+
   leaveGame = () => {
     const { dispatch } = this.props;
     dispatch(leaveGameRoom());

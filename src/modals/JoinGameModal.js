@@ -8,10 +8,10 @@ import PrimaryButton from "../ui_components/PrimaryButton";
 
 class JoinGameModal extends React.Component {
   state = {
-    nickName: ""
+    nickName: "",
   };
 
-  onChange = e => {
+  onChange = (e) => {
     this.setState({ nickName: e.target.value });
   };
 
@@ -24,18 +24,21 @@ class JoinGameModal extends React.Component {
     const { isOpen, onClose } = this.props;
     return (
       <Modal isOpen={isOpen} onClose={onClose}>
-        <Typography variant="h1">Join Game</Typography>
-        <InputField
-          placeholder="Choose Your Name"
-          value={this.state.nickName}
-          onChange={this.onChange}
-        />
-        <PrimaryButton
-          label="Join Game"
-          onClick={this.handleOnClick}
-          disabled={this.state.nickName === ""}
-          fullWidth
-        />
+        <form onSubmit={this.handleOnClick}>
+          <Typography variant="h1">Join Game</Typography>
+          <InputField
+            placeholder="Choose Your Name"
+            value={this.state.nickName}
+            onChange={this.onChange}
+          />
+          <PrimaryButton
+            label="Join Game"
+            type="submit"
+            onClick={this.handleOnClick}
+            disabled={this.state.nickName === ""}
+            fullWidth
+          />
+        </form>
       </Modal>
     );
   }
