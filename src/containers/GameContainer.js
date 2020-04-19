@@ -13,7 +13,7 @@ import {
   updateGameMapReduxState,
   selectSpyMaster,
   resetSpyMasters,
-  leaveGameRoom
+  leaveGameRoom,
 } from "../actions/gamePlay";
 
 import { resetGame } from "../actions/createGame";
@@ -26,13 +26,13 @@ class GameContainer extends React.Component {
     const { dispatch, userState } = this.props;
     const gameJoined = userState.game;
     dispatch(gamePlayListener(gameJoined));
-    window.addEventListener("beforeunload", event => {
+    window.addEventListener("beforeunload", (event) => {
       dispatch(leaveGameRoom());
     });
   }
 
   state = {
-    isSpyMaster: false
+    isSpyMaster: false,
   };
 
   onSpyMasterToggle = () => {
@@ -41,7 +41,7 @@ class GameContainer extends React.Component {
     });
   };
 
-  handleCardClick = position => {
+  handleCardClick = (position) => {
     const { dispatch, gameState } = this.props;
     dispatch(updateGameMapReduxState(position, gameState.selection));
     dispatch(selectKeyCard(position));
@@ -73,7 +73,7 @@ class GameContainer extends React.Component {
       <Box
         style={{
           display: "flex",
-          justifyContent: "center"
+          justifyContent: "center",
         }}
         mt={5}
       >
@@ -94,7 +94,7 @@ class GameContainer extends React.Component {
           py={2}
           component="div"
           style={{
-            minWidth: "100px"
+            minWidth: "100px",
           }}
         >
           <Box
@@ -102,7 +102,7 @@ class GameContainer extends React.Component {
               height: "100%",
               display: "flex",
               flexDirection: "column",
-              justifyContent: "space-between"
+              justifyContent: "space-between",
             }}
           >
             {" "}
@@ -140,10 +140,10 @@ class GameContainer extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     userState: state.userState,
-    gameState: state.gamePlay
+    gameState: state.gamePlay,
   };
 };
 
